@@ -1,0 +1,38 @@
+<!-- Esto debe ser igual que el indice, pero mostrando solo los que tienen el nombre parecido -->
+
+<h1>Resultados de buscar:  <small>{{termino}}</small></h1>
+
+
+<!-- Hago un if para el caso en el que no se obterngan resultados de busqueda -->
+<div class="row animated fadeIn fast" *ngIf="heroes.length==0">
+  <div class="col-md-12">
+    <div class="alert alert-info" role="alert">
+        No hay resultados para el termino: {{termino}}
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="row p-3 row-cols-1 row-cols-sm-2 row-cols-md-3 g-5 ">
+
+  <!-- Hago una clase for para mostrar todos los heroes.. i = index para poner el numero de array que es -->
+  <div class="card animated fadeIn fast" *ngFor="let heroe of heroes;">
+    <!-- Corcehte para decirlo que es o lo manea angular, lo mismo en el nombre (otra alternativa es extrpolarlo con doble llave {{}}) -->
+    <img [src]="heroe.img"  class="card-img-top img-fluid"  [alt]="heroe.nombre">
+    <div class="card-body">
+       <!-- Ahora es necesario hacerlo con interpolacion -->
+      <h5 class="card-title">{{heroe.nombre}}</h5>
+      <p class="card-text"> {{heroe.bio}} </p>
+      <p class="card-text"><small class="text-body-secondary"> {{heroe.aparicion}} </small></p>
+
+      <!-- Utilizando el boto, se debehacer una funcion para que retorne el index -->
+      <button (click)="verHeroe(heroe.idx)" type="button" class="btn btn-outline-primary  w-100">Ver más...</button>
+
+
+      <!-- Otra forma de redigirir con el boton -->
+        <!-- <a [routerLink]="['/heroe', i]" class="btn btn-outline-primary w-100"> Ver mas.. </a> -->
+    </div>
+  </div>
+</div>

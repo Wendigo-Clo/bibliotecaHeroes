@@ -1,0 +1,35 @@
+
+
+
+<div calss=" row">
+  <div class="col-md-4  col-sm-1  animated fadeIn fast">
+    <h5><small>Mas informacion de...</small></h5>
+    <!-- Upperse con alt 124, se la utilizacion de pipes, en este caso, hace mayuscula el nombre -->
+    <div><h1>{{heroe.nombre | uppercase}}</h1></div>
+    <!-- Mano un parametro al pipe para que me muestre solo el año -->
+    <h6><small>Fecha de aparicion: {{heroe.aparicion | date:'y'}}</small></h6>
+    <br>
+    <img [src]="heroe.img" class = "img-fluid" alt="">
+  </div>
+
+  <br>
+
+  <div class="col-md-10 col-sm-1 aniamted fadeIn">
+    <hr>
+    <p>
+      {{heroe.bio}}
+    </p>
+    <div>
+      <img scr="" alt="">
+    </div>
+
+    <div>
+      <u>Pertenece a:</u> <h2> {{heroe.casa}}</h2>
+        <br>
+      <img [src]=""  class = "img-fluid" alt="">
+    </div>
+
+  </div>
+
+  <a [routerLink]="['/heroes']" class="btn btn-outline-danger w-75"> Volver al menú </a>
+</div>

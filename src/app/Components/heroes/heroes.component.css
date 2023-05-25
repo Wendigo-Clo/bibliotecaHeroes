@@ -1,0 +1,18 @@
+img{
+  align-items: center;
+  width: 250px;
+  height: 270px;
+}
+/* el grid colum, me permite el espacio entre las columas de los items */
+.row{
+  padding-top: 5%;
+  grid-column-gap: 0.5em;
+margin-left: 20px;
+}
+
+/* Ajusto el tamaño de las tarjetas asi entran 3 correctamente */
+.card{
+  width: 300px;
+  align-self: flex-start;
+
+}
